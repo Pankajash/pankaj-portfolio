@@ -1,0 +1,6 @@
+<svg><desc>Hand-drawn style svg for project preview</desc> id="radar" viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#00ff9f"/><stop offset="1" stop-color="#6be0ff"/></linearGradient></defs>
+<circle cx="150" cy="150" r="120" fill="none" stroke="#07202a"/>
+<g id="labels" fill="#9fb0c8" font-family="Inter" font-size="12"></g>
+<polygon id="shape" points="" fill="rgba(11,132,255,0.12)" stroke="#00ff9f"/>
+</svg>

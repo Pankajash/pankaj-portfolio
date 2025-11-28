@@ -1,0 +1,17 @@
+
+<svg><desc>Hand-drawn style svg for project preview</desc> xmlns='http://www.w3.org/2000/svg' width='900' height='360'>
+  <rect width='100%' height='100%' fill='#020519'/>
+  <g transform='translate(20,20)'><rect width='860' height='320' rx='12' fill='#041026' stroke='#00334d'/>
+    <rect x='12' y='12' width='836' height='36' rx='8' fill='#00121a' stroke='#002b3a'/>
+    <text x='28' y='36' fill='#00ff9f' font-size='18' font-family='Inter'>Unique Paths — Grid Preview</text>
+    <g transform='translate(40,80)' fill='#0be7b3' font-family='monospace'>
+      <text x='0' y='0' font-size='14'>Grid (5×5):</text>
+      <rect x='0' y='10' width='220' height='120' rx='8' fill='#001827' stroke='#003a3f'/>
+      <g transform='translate(10,20)' fill='#9bf6d8' font-size='12'>
+        <text x='0' y='0'>[1,1,1,1,1]</text>
+        <text x='0' y='18'>[1,2,3,4,5]</text>
+        <text x='0' y='36'>[1,3,6,10,15]</text>
+      </g>
+    </g>
+  </g></g>
+</svg>
