@@ -1,16 +1,5 @@
-
-<svg><desc>Hand-drawn style svg for project preview</desc> xmlns='http://www.w3.org/2000/svg' width='900' height='360'>
-  <rect width='100%' height='100%' fill='#020519'/>
-  <g transform='translate(20,20)'><rect width='860' height='320' rx='12' fill='#041026' stroke='#002b3a'/>
-    <text x='28' y='34' fill='#00ff9f' font-size='18' font-family='Inter'>AdaptivePuzzleMind — ETL Flow</text>
-    <g transform='translate(60,80)'>
-      <rect x='0' y='0' width='160' height='120' rx='10' fill='#062a2b' stroke='#00897a'/>
-      <text x='80' y='66' text-anchor='middle' fill='#9be8c7'>Ingest</text>
-      <rect x='200' y='0' width='160' height='120' rx='10' fill='#06223a' stroke='#406bff'/>
-      <text x='280' y='66' text-anchor='middle' fill='#9be8c7'>Transform</text>
-      <rect x='400' y='0' width='160' height='120' rx='10' fill='#31202a' stroke='#ff6b9a'/>
-      <text x='480' y='66' text-anchor='middle' fill='#ffd6e0'>Output</text>
-      <path d='M160 60 L200 60' stroke='#00ff9f' stroke-width='2' marker-end='url(#arrow)' />
-    </g>
-  </g></g>
-</svg>
+<a class="proj-card" href="projects/etl_pipeline.html">
+  <img src="assets/projects/etl_pipeline.svg" alt="ETL Flow Snapshot">
+  <h3>AdaptivePuzzleMind — ETL Flow</h3>
+  <p>Data ingestion and transformation pipeline.</p>
+</a>
