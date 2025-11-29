@@ -1,19 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 280" width="260" height="280">
+  <desc>Pankaj.AI — Neon Emotion Core with idea cloud and emotion text</desc>
 
-<svg><desc>Hand-drawn style svg for project preview</desc> xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' width='240' height='240'>
+  <!-- === GRADIENTS & FILTERS === -->
   <defs>
-    <linearGradient id='g1' x1='0' x2='1'><stop offset='0' stop-color='#00ff9f'/><stop offset='1' stop-color='#6be0ff'/></linearGradient>
-    <filter id='glow'><feGaussianBlur stdDeviation='6' result='coloredBlur'/><feMerge><feMergeNode in='coloredBlur'/><feMergeNode in='SourceGraphic'/></feMerge>
-  </filter>
+    <radialGradient id="calmGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff9f" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#061225" stop-opacity="0.1"/>
+    </radialGradient>
+    <radialGradient id="happyGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6be0ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#010a14" stop-opacity="0.1"/>
+    </radialGradient>
+    <radialGradient id="alertGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffbf00" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1a0f00" stop-opacity="0.1"/>
+    </radialGradient>
+    <radialGradient id="angryGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2a2a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#150000" stop-opacity="0.1"/>
+    </radialGradient>
+
+    <linearGradient id="edgeGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#00ff9f"/>
+      <stop offset="100%" stop-color="#6be0ff"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width='100%' height='100%' rx='20' fill='#020514'/>
-  <g transform='translate(40,28)'> 
-    <circle cx='80' cy='60' r='52' fill='url(#g1)' opacity='0.12'/>
-    <circle cx='80' cy='60' r='40' fill='#061225' stroke='#00ff9f' stroke-width='2' filter='url(#glow)'/>
-    <circle cx='66' cy='52' r='4' fill='#00ff9f'/>
-    <circle cx='94' cy='52' r='4' fill='#6be0ff'/>
-    <rect x='60' y='74' width='40' height='8' rx='4' fill='#00ff9f' opacity='0.12'/>
-    <g transform='translate(0,120)'><rect x='0' y='0' width='160' height='6' rx='3' fill='#002233' /><rect x='0' y='12' width='160' height='6' rx='3' fill='#00152b' /></g>
-  </g>
-  <text x='120' y='215' font-size='12' text-anchor='middle' fill='#8fbecf' font-family='Inter'>Pankaj — avatar (neon)</text>
-  <animate attributeName='opacity' values='0.9;1;0.9' dur='3s' repeatCount='indefinite' />
-</svg>
+
+  <!-- === BACKGROUND === -->
+  <rect width="100%" height="100%" rx="22" fill="#020514" stroke="url(#edgeGrad)" stroke-width="1.5"/>
+
+  <!-- === EMOTION CLOUD === -->
+  <g id="emotionCloud" transform="translate(130,55)">
+    <!-- Cloud base -->
+    <ellipse id="cloudShape" rx="50" ry="20" fill="url(#calmGrad)" filter="
