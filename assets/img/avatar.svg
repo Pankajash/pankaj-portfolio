@@ -1,40 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 280" width="260" height="280">
-  <desc>Pankaj.AI — Neon Emotion Core with idea cloud and emotion text</desc>
+function setEmotion(state) {
+  const core = document.getElementById('core');
+  const cloud = document.getElementById('emotionCloud').querySelector('ellipse');
+  const symbol = document.getElementById('emotionSymbol');
 
-  <!-- === GRADIENTS & FILTERS === -->
-  <defs>
-    <radialGradient id="calmGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00ff9f" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#061225" stop-opacity="0.1"/>
-    </radialGradient>
-    <radialGradient id="happyGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#6be0ff" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#010a14" stop-opacity="0.1"/>
-    </radialGradient>
-    <radialGradient id="alertGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffbf00" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#1a0f00" stop-opacity="0.1"/>
-    </radialGradient>
-    <radialGradient id="angryGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ff2a2a" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#150000" stop-opacity="0.1"/>
-    </radialGradient>
+  const moods = {
+    calm:  { fill: 'url(#calmGrad)', emoji: '💭' },
+    happy: { fill: 'url(#happyGrad)', emoji: '😄' },
+    alert: { fill: 'url(#alertGrad)', emoji: '⚡' },
+    angry: { fill: 'url(#angryGrad)', emoji: '🔥' },
+  };
 
-    <linearGradient id="edgeGrad" x1="0" x2="1">
-      <stop offset="0%" stop-color="#00ff9f"/>
-      <stop offset="100%" stop-color="#6be0ff"/>
-    </linearGradient>
-
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <!-- === BACKGROUND === -->
-  <rect width="100%" height="100%" rx="22" fill="#020514" stroke="url(#edgeGrad)" stroke-width="1.5"/>
-
-  <!-- === EMOTION CLOUD === -->
-  <g id="emotionCloud" transform="translate(130,55)">
-    <!-- Cloud base -->
-    <ellipse id="cloudShape" rx="50" ry="20" fill="url(#calmGrad)" filter="
+  if (moods[state]) {
+    core.setAttribute('fill', moods[state].fill);
+    cloud.setAttribute('fill', moods[state].fill);
+    symbol.textContent = moods[state].emoji;
+  }
+}
