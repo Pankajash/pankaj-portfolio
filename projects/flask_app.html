@@ -1,3 +1,85 @@
 <!-- human-note-start: hand-edited by Pankaj (intermediate style) -->
-<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>AI Flask App</title><link rel='stylesheet' href='../style.css'></head><body data-theme='dark'><header class='mast'><nav class='topnav'><div class='brand'>Pankaj<span class='dot'>;</span></div><ul class='links'><li><a href='../index.html'>Home</a></li><li><a href='unique_paths.html'>Projects</a></li></ul><div class='actions'><a class='btn' href='../assets/RESUME_PANKAJ.pdf' download>Resume</a><button id='themeToggle'>☀️</button></div></nav></header><main class='proj-main'><div class='proj-card'><img src='../assets/projects/flask_app.svg' class='proj-hero' alt='Flask App'><h1>AI Flask App</h1><p class='muted'>Flask, TensorFlow — Prediction service</p><p>This page shows a small simulated POST request to a prediction endpoint. For full model code see the repo.</p><h3>Demo (simulated)</h3><label>Input (number): <input id='in' value='5'></label><button id='call'>Predict</button><pre id='out' class='terminal'></pre></div></main><script src='../script_multi.js'></script><script>document.getElementById('call').onclick=()=>{const v=parseFloat(document.getElementById('in').value);document.getElementById('out').textContent='Request...\nResponse: '+JSON.stringify({input:v,prediction:Math.tanh(v/10).toFixed(3)})};</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Flask App — a simple demonstration of a Flask + TensorFlow prediction service with simulated frontend API calls.">
+  <title>AI Flask App</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+    .terminal {
+      background: #011025;
+      color: #00ff9f;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 12px;
+      min-height: 50px;
+      white-space: pre-wrap;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+  <header class="mast">
+    <nav class="topnav">
+      <div class="brand">Pankaj<span class="dot">;</span></div>
+      <ul class="links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="unique_paths.html">Unique Paths</a></li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="../assets/RESUME_PANKAJ.pdf" download>Resume</a>
+        <button id="themeToggle" aria-label="Toggle theme">☀️</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="proj-main">
+    <div class="proj-card">
+      <img src="../assets/projects/flask_app.svg" class="proj-hero" alt="Flask App illustration">
+      <h1>AI Flask App</h1>
+      <p class="muted">Flask, TensorFlow — Prediction Service</p>
+      <p>This page shows a small simulated POST request to a prediction endpoint. For full model code see the repo.</p>
+
+      <h3>Demo (Simulated)</h3>
+      <label for="inputVal">Input (number):</label>
+      <input id="inputVal" value="5">
+      <button id="call">Predict</button>
+      <pre id="out" class="terminal" role="status" aria-live="polite"></pre>
+    </div>
+  </main>
+
+  <script src="../script_multi.js"></script>
+  <script>
+    document.getElementById('call').onclick = () => {
+      const v = parseFloat(document.getElementById('inputVal').value);
+      const output = document.getElementById('out');
+      if (isNaN(v)) {
+        output.textContent = 'Error: Please enter a valid number.';
+        return;
+      }
+      const prediction = Math.tanh(v / 10).toFixed(3);
+      const response = { input: v, prediction };
+      output.textContent =
+        'Request sent...\nResponse: ' + JSON.stringify(response, null, 2);
+    };
+
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      const body = document.body;
+      const current = body.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', next);
+      themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
 <!-- last-edited: reviewed and tuned by Pankaj -->
